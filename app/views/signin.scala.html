@@ -1,0 +1,23 @@
+@(csrf: String)
+@outer_template("Sign In")(""){
+<link href="/assets/stylesheets/signin.css" rel="stylesheet">
+
+<div class="form-signin">
+    <a href="/">
+        <img class="mb-4" src="/assets/images/logo_medium.png">
+    </a>
+
+    <label for="email" class="sr-only">Email</label>
+    <input type="email" id="email" class="form-control" placeholder="Email" required autofocus>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" class="form-control" placeholder="Password" required>
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-dark btn-block" id="button_sign_in" >Sign in</button>
+    <div style="margin-bottom: 10px;"></div>
+    <p id="prompt"><a href="/forgot"> Forgot your password?</a></p>
+</div>
+<div style="padding: 2em;"></div>
+<input type="hidden" id="csrf" value="@csrf">
+
+<script src="/assets/javascript/signin.js" type="text/javascript"></script>
+}

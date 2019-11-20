@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /favicon.ico        controllers.Assets.at(path="/public/favicons", file="favicon.ico")
+GET     /android-chrome-192x192.png        controllers.Assets.at(path="/public/favicons", file="android-chrome-192x192.png")
+GET     /android-chrome-512x512.png        controllers.Assets.at(path="/public/favicons", file="android-chrome-512x512.png")
+GET     /apple-touch-icon.png              controllers.Assets.at(path="/public/favicons", file="apple-touch-icon.png")
+GET     /favicon-16x16.png                 controllers.Assets.at(path="/public/favicons", file="favicon-16x16.png")
+GET     /favicon-32x32.png                 controllers.Assets.at(path="/public/favicons", file="favicon-32x32.png")
+GET     /site.webmanifest                  controllers.Assets.at(path="/public/favicons", file="site.webmanifest")
+
+# An example controller showing a sample home page
+
+GET     /init/:key                  controllers.InitController.init(key: String)
+GET     /sitemap                    controllers.SitemapController.sitemap
+GET     /version                    controllers.VersionController.version
+
+GET     /                           controllers.HomeController.index
+#+nocsrf
+POST    /subscribe/json             controllers.HomeController.subscribe_json
+
+GET     /signin                     controllers.AuthenticationController.signin
+GET     /signout                    controllers.AuthenticationController.signout
+GET     /reset/:token               controllers.AuthenticationController.reset(token: String)
+GET     /forgot                     controllers.AuthenticationController.forgot
+
+POST    /hash/json                  controllers.AuthenticationController.hash_json
+POST    /forgot/json                controllers.AuthenticationController.forgot_json
+POST    /authenticate/json          controllers.AuthenticationController.authenticate_json
+
+GET     /subscribers                controllers.DashboardController.subscribers
+GET     /users                      controllers.DashboardController.users
+
+POST    /user/add/json              controllers.UserController.user_add_json
+POST    /user/edit/json             controllers.UserController.user_edit_json
+POST    /user/delete/json           controllers.UserController.user_delete_json
+

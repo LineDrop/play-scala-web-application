@@ -1,0 +1,103 @@
+@import models._
+@import org.joda.time._
+
+@(subscribers: Map[String,Subscriber], count_by_date: List[(DateTime,Int)], role: Role.Value)
+
+@dashboard_template("Subscribers") {
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/subscribers">
+                            <span data-feather="send"></span>
+                            Subscribers <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @if(role == Role.administrator) {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">
+                            <span data-feather="users"></span>
+                            Users
+                        </a>
+                    </li>
+                    }
+                </ul>
+
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Subscribers</h1>
+            </div>
+
+            <canvas class="my-4 w-100" id="myChart" width="600" height="200"></canvas>
+
+            <ul class="list-group" id="searchable_list">
+            @for((id,subscriber) <- subscribers.toList.sortBy(_._2.created.getMillis)) {
+                <li class="list-group-item searchable">
+                    <span class="badge badge-info">Email</span> @subscriber.email <br>
+                    <span class="badge badge-info">IP</span>  @subscriber.ip <br>
+                    <span class="badge badge-info">Created</span>  @subscriber.created
+                </li>
+            }
+            </ul>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+
+<script src="/assets/javascript/search.js"></script>
+
+<script>
+    (function () {
+  'use strict'
+
+  // Graphs
+  var ctx = document.getElementById('myChart')
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [
+        @for((date,count) <- count_by_date) {
+        '@{date.toString("MM/dd/yyyy")}',
+        }
+      ],
+      datasets: [{
+        data: [
+          @for((date,count) <- count_by_date) {
+            @count,
+          }
+        ],
+        lineTension: 0,
+        backgroundColor: '#007bff',
+        borderColor: '#007bff',
+        borderWidth: 2,
+        pointBackgroundColor: '#007bff'
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: false
+          }
+        }]
+      },
+      legend: {
+        display: false
+      }
+    }
+  })
+}())
+</script>
+
+}
+

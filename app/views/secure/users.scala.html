@@ -1,0 +1,129 @@
+@import models._
+@import org.joda.time._
+
+@(users: Map[String,User], csrf: String)
+@dashboard_template("Users") {
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/subscribers">
+                            <span data-feather="send"></span>
+                            Subscribers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/users">
+                            <span data-feather="users"></span>
+                            Users <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h1 class="h2">Users</h1>
+            </div>
+
+            <button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#add_user_modal">Add</button>
+
+            <ul class="list-group" id="searchable_list">
+                @for((id,user) <- users.toList.sortBy(_._2.created.getMillis)) {
+                <li class="list-group-item searchable">
+                    <div class="float-right">
+                        <span class="badge badge-info" onclick="show_edit_user_modal('@user.name','@user.email', '@user.role')">Edit</span> <br>
+                    </div>
+                    <span class="badge badge-light">Name</span>  @user.name <br>
+                    <span class="badge badge-light">Email</span>  @user.email <br>
+                    <span class="badge badge-light">Role</span>  @user.role <br>
+                    <span class="badge badge-light">Created</span>  @user.created
+                </li>
+                }
+            </ul>
+
+        </main>
+    </div>
+</div>
+
+<!-- Add User Modal -->
+<div class="modal fade" id="add_user_modal" tabindex="-1" role="dialog" aria-labelledby="add_user_modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <span id="prompt"></span>
+                    <input type="text" id="add_name" class="form-control mb-2" placeholder="Name">
+                    <input type="email" id="add_email" class="form-control mb-2" placeholder="Email">
+                    <select class="form-control mb-2" id="add_role">
+                        <option value="administrator">Administrator</option>
+                        <option value="editor">Editor</option>
+                    </select>
+
+                    <div style="margin-bottom: 10px;"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal fade" id="edit_user_modal" tabindex="-1" role="dialog" aria-labelledby="edit_user_modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <span id="edit_user_prompt"></span>
+                    <input type="email" id="edit_email" class="form-control mb-2" placeholder="Email" readonly>
+                    <input type="text" id="edit_name" class="form-control mb-2" placeholder="Name">
+                    <select class="form-control mb-2" id="edit_role">
+                        <option value="administrator">Administrator</option>
+                        <option value="editor">Editor</option>
+                    </select>
+
+                    <div style="margin-bottom: 10px;"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger mr-auto" id="button_delete">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_edit">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="csrf" value="@csrf">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+
+
+<script src="/assets/javascript/search.js"></script>
+<script src="/assets/javascript/users.js"></script>
+}

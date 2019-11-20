@@ -1,0 +1,45 @@
+@(csrf: String)
+@home_template("Take Your Time")("A smarter way to wait for anything is coming soon! Subscribe to get notified at launch.") {
+
+<link href="https://getbootstrap.com/docs/4.3/examples/cover/cover.css" rel="stylesheet">
+
+
+<style>
+      body {
+        background: url(assets/images/home_background.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+</style>
+
+<div class="cover-heading">
+    <img src="assets/images/logo.png" class="img-fluid">
+</div>
+<h1 class="cover-heading"><strong>Add a great tag line here</strong></h1>
+<div style="padding-bottom: 0.8em;"></div>
+<p class="lead">A smart description for your awesome app goes here.</p>
+<p class="lead" id="get_notified">Get notified at launch!</p>
+<div style="padding-bottom: 0.8em;"></div>
+<p class="d-none lead" id="thank_you"><strong>Thank you!</strong></p>
+
+<div class="d-flex justify-content-center input-group mb-3" id="subscribe_form">
+
+    <input type="email" class="form-control" style="max-width: 300px;"
+           id="subscriber_email" placeholder="Enter your email" area-label="Enter your email"
+           area-describedby="basic-addon2" autofocus>
+    <div class="input-group-append">
+        <button class="btn btn-dark" type="button" id="button_sign_up">Sign Up</button>
+    </div>
+</div>
+
+<div style="padding: 2em;"></div>
+
+<input type="hidden" id="csrf" value="@csrf">
+
+<script src="assets/javascript/index.js" type="text/javascript"></script>
+<script src="assets/javascript/copyright.js" type="text/javascript"></script>
+
+}
