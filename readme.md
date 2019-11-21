@@ -53,7 +53,7 @@ Before running the project, please make sure you have the following installed:
 - Paste URL: https://github.com/LineDrop/code.git
 - Click Clone
 - Click Yes to confirm
-- Click Ok to accept import defaults
+- Click Ok to accept default import settings
 - Wait until the project is imported and the SBT has finished loading dependencies
 
 ### Configuring Application
