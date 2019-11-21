@@ -41,9 +41,10 @@ The project covers the following:
 Before running the project, please make sure you have the following installed:
 
 - SBT _build and package management tool_: https://www.scala-sbt.org
-- IntelliJ IDEA Community Edition _integrated development environment_: https://www.jetbrains.com/idea
 - MongoDB Community Server: https://www.mongodb.com/download-center/community
 - Compass Community _MongoDB GUI_: https://www.mongodb.com/download-center/compass
+- IntelliJ IDEA Community Edition _integrated development environment_: https://www.jetbrains.com/idea
+    - During the IntelliJ setup, install Scala plugin
 
 ### Importing Project
 
