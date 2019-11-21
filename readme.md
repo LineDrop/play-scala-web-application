@@ -4,8 +4,8 @@
 
 Concise Play Framework/Scala project to demonstrate the fundamentals of building a web application.  A complete 
 subscriber app, it is designed to be a starting point for your own project by providing essential components of a
-web application such as database operations, application configuration, logging, email integration, user management, 
-and more. 
+web application such as database operations, application configuration, logging, email integration, session management, 
+and data encryption, search, and more. 
 
 You can use the project to quickly learn the basics and expand the existing codebase to add your own functionality.
 
