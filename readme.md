@@ -34,7 +34,7 @@ The project covers the following:
 - Creating, editing, and deleting users
 - Password resetting
 - User authentication
-- Role-base access
+- Role-based access
 
 ## Requirements
 
