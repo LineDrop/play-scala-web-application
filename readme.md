@@ -21,7 +21,7 @@ The project covers the following:
 - Threaded operations
 - User friendly error views
 - Scheduling automated tasks
-- Rending HTML views
+- Rendering HTML views
 - Passing model data to HTML views
 - jQuery/Javascript functionality
 - Formless data exchange with AJAX
