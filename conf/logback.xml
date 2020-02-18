@@ -35,7 +35,6 @@
 
 
   <logger name="sample" level="DEBUG"/> <!-- use this to log application messages -->
-
   <logger name="play" level="WARN"/>
   <logger name="application" level="INFO"/>
 

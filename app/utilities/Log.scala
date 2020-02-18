@@ -1,7 +1,7 @@
 package utilities
 
 import com.typesafe.config.ConfigFactory
-import play.api.{Logger, Logging}
+import play.api.Logger
 
 object Log {
   private val log_name = ConfigFactory.load.getString("log.name")
