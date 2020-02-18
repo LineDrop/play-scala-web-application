@@ -14,13 +14,15 @@ import models.JsonStatus._
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
 
 
-  val log = Log.get
+  private val log = Log.get
   // A device to translate JSON object to a class;
   // keys in JSON must match class parameters.
   implicit val subscriber_form_reads = Json.reads[SubscriberForm]
 
   def index = Action { implicit request: Request[AnyContent] =>
 
+    log.debug(s"This is my custom logger ${log.logger}")
+    
     // Render view. CSRF token is passed to enable secure AJAX post from the html.
     Ok(views.html.index(CSRF.getToken.get.value))
   }
