@@ -10,7 +10,7 @@ import utilities._
 
 class VersionController  @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
 
-  val log = Log.get
+  private val log = Log.get
 
   def version = Action {request: Request[AnyContent] =>
 

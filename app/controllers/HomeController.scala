@@ -21,8 +21,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 
   def index = Action { implicit request: Request[AnyContent] =>
 
-    log.debug(s"This is my custom logger $log")
-
     // Render view. CSRF token is passed to enable secure AJAX post from the html.
     Ok(views.html.index(CSRF.getToken.get.value))
   }

@@ -10,7 +10,7 @@ import utilities.{Log, TimeStamp}
 
 class UserController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
 
-  val log = Log.get
+  private val log = Log.get
   // A device to translate JSON object to a class;
   // keys in JSON must match class parameters.
   implicit val user_form_reads = Json.reads[UserForm]

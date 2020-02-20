@@ -10,7 +10,7 @@ import utilities.{Log, TimeStamp}
 
 class InitController  @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
 
-  val log = Log.get
+  private val log = Log.get
 
   def init(key: String) = Action { implicit request: Request[AnyContent] =>
 
