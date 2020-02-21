@@ -23,10 +23,10 @@ object Database extends Logging {
   LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext].getLogger("org.mongodb.driver").setLevel(Level.ERROR)
 
   // Read client and database from configuration
-  val config_client = ConfigFactory.load.getString("mongodb.server")
-  val config_database = ConfigFactory.load.getString("mongodb.database")
+  private val config_client = ConfigFactory.load.getString("mongodb.server")
+  private val config_database = ConfigFactory.load.getString("mongodb.database")
 
-  val log = Log.get
+  private val log = Log.get
 
   def insert (document: Document, collection_name: String): Unit = {
 
