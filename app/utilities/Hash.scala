@@ -4,7 +4,6 @@ package utilities
 
 import com.github.t3hnar.bcrypt._
 import play.api.Logging
-import scala.util.Try
 import scala.util.Success
 import scala.util.Failure
 

@@ -1,7 +1,6 @@
 package utilities
 
 import com.typesafe.config.ConfigFactory
-import models.Environment
 
 object Server {
 
