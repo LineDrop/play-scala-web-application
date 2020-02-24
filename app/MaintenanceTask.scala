@@ -15,7 +15,7 @@ import utilities.Log
 class MaintenanceTask @Inject()(actorSystem: ActorSystem)(implicit executionContext: ExecutionContext) extends Logging{
 
   val log = Log.get
-  actorSystem.scheduler.schedule(initialDelay = 10.seconds, interval = 1.minute) {
+  actorSystem.scheduler.schedule(initialDelay = 10.seconds, interval = 30.minute) {
     // the block of code that will be executed
     log.debug("Running maintenance task")
     models.KeyOperations.expire

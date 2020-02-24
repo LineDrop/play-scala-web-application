@@ -53,7 +53,7 @@ object Database extends Logging {
     })
   }
 
-  def find (search_by: String, value: String, collection_name: String): Option[Document] = {
+  def find (search_key: String, search_value: String, collection_name: String): Option[Document] = {
 
     // The application will need to wait for the find operation thread to complete
     // in order to process the returned value.
@@ -76,7 +76,7 @@ object Database extends Logging {
     // The database query requests the results to be sorted by 'created' field in
     // descending order; the top document is selected.
 
-    collection.find(equal(search_by, value)).sort(descending("created")).first()
+    collection.find(equal(search_key, search_value)).sort(descending("created")).first()
       .collect().subscribe((results: Seq[Document]) => {
       log.trace(s"Found in collection: $results")
 
@@ -138,7 +138,7 @@ object Database extends Logging {
   }
 
 
-  def update (search_by: String, search_value: String, document: Document, collection_name: String): Unit = {
+  def update (search_key: String, search_value: String, document: Document, collection_name: String): Unit = {
 
     log.debug(s"Starting database update operation thread")
 
@@ -151,15 +151,15 @@ object Database extends Logging {
 
     // Start replaceOne operation thread to remove the original document and insert the
     // new one while keeping the document id.
-    // Replace document with field 'search_by' equal to 'search_value'
-    collection.replaceOne(equal(search_by,search_value),document).subscribe((result: UpdateResult) => {
+    // Replace document with field 'search_key' equal to 'search_value'
+    collection.replaceOne(equal(search_key,search_value),document).subscribe((result: UpdateResult) => {
       log.trace(s"Document updated with result: $result")
       _client.close // close client connection to avoid memory leaks
     })
 
   }
 
-  def delete (search_by: String, search_value: String, collection_name: String): Unit = {
+  def delete (search_key: String, search_value: String, collection_name: String): Unit = {
 
     log.debug(s"Starting database delete operation thread")
 
@@ -171,15 +171,15 @@ object Database extends Logging {
     val collection: MongoCollection[Document] = _database.getCollection(collection_name)
 
     // Start deleteOne operation thread
-    // Delete documents with field 'search_by' equal to 'search_value'
-    collection.deleteOne(equal(search_by,search_value)).subscribe((result: DeleteResult) => {
+    // Delete documents with field 'search_key' equal to 'search_value'
+    collection.deleteOne(equal(search_key,search_value)).subscribe((result: DeleteResult) => {
       log.trace(s"Document delete result: $result")
       _client.close // close client connection to avoid memory leaks
     })
 
   }
 
-  def delete_before (search_by: String, time: BsonDateTime, collection_name: String): Unit = {
+  def delete_before (search_key: String, time: BsonDateTime, collection_name: String): Unit = {
 
     log.debug(s"Starting database delete operation thread")
 
@@ -189,8 +189,8 @@ object Database extends Logging {
     val collection: MongoCollection[Document] = _database.getCollection(collection_name)
 
     // Start deleteMany operation thread
-    // Delete documents with date/time field 'search_by' less then value 'time'
-    collection.deleteMany(lt(search_by,time)).subscribe((result: DeleteResult) => {
+    // Delete documents with date/time field 'search_key' less then value 'time'
+    collection.deleteMany(lt(search_key,time)).subscribe((result: DeleteResult) => {
       log.trace(s"Documents deleted with result: $result")
       _client.close // close client connection to avoid memory leaks
     })

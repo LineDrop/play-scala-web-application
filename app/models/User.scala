@@ -83,7 +83,7 @@ object UserOperations extends Logging {
         // Token is valid
         log.trace(s"Hashing for user with email ${key.email}")
         // Encrypt the password
-        val hash = Hash.encrypt(password)
+        val hash = Hash.create(password)
         log.trace(s"User's hash: $hash")
 
         // Get user by email
@@ -122,17 +122,7 @@ object UserOperations extends Logging {
     read(email) match {
       case Some(user) => {
         // Compare password with the hashed value
-        Hash.validate(password, user.hash) match {
-          case Success(hash_password_match) => {
-            log.trace(s"Value match $hash_password_match for valid hash: ${user.hash} for $password")
-            // Return user if the hash is valid and the password matches the hashed value
-            if(hash_password_match) Some(user) else None
-          }
-          case Failure(failure) => {
-            // Invalid hash, return None
-            log.trace(s"Invalid hash: ${user.hash} for $password")}
-            None
-        }
+        if (Hash.validate(password, user.hash)) Some(user) else None
       }
       case None => {
         // Cannot find user with this email
