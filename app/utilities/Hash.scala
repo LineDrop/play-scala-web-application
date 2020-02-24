@@ -15,7 +15,7 @@ object Hash extends Logging {
   def create(value: String): String = {
 
     log.debug("Encrypting a value")
-    // Encrypting value with a salted hash
+    // Creating a salted hash
     val salt = generateSalt
     val hash = value.bcrypt(salt)
     // return hashed value
