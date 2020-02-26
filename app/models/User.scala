@@ -48,7 +48,7 @@ object UserOperations extends Logging {
          |</body></html>""".stripMargin
 
     // Send welcome email
-    Mailer.send(user.email,message,"Welcome to LineDrop Code!")
+    SendGrid.send(user.email,message,"Welcome to LineDrop Code!")
 
   }
 
@@ -69,7 +69,7 @@ object UserOperations extends Logging {
          |</body></html>""".stripMargin
 
     // Send email
-    Mailer.send(user.email,message,"LineDrop Code password assistance")
+    SendGrid.send(user.email,message,"LineDrop Code password assistance")
 
   }
 

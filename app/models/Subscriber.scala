@@ -33,7 +33,7 @@ object SubscriberOperations extends Logging {
 
     val sa_email = ConfigFactory.load.getString("sa.email")
     val html_message = "<html><body><p>Greetings! You have a new subscriber.</p></body></html>"
-    utilities.Mailer.send(sa_email, html_message, "new subscriber")
+    utilities.SendGrid.send(sa_email, html_message, "new subscriber")
 
   }
 

@@ -22,7 +22,7 @@ class ErrorHandler extends HttpErrorHandler with Logging {
       log.error(s"${exception.toString}")
       // Send email alert
       val html_message = s"<html><body><p>Greetings! Error occurred in home application. Details below.</p><p> ${exception.getMessage}</p></body></html>"
-      utilities.Mailer.send("paul@linedrop.io", html_message, "Home app error")
+      utilities.SendGrid.send("paul@linedrop.io", html_message, "Home app error")
       InternalServerError(views.html.error())
     }
     )
