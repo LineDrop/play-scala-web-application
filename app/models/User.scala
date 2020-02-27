@@ -3,7 +3,6 @@ package models
 import play.api.Logging
 import org.mongodb.scala.bson._
 import org.joda.time._
-import scala.util.{Failure, Success}
 import scala.collection.mutable
 
 import utilities._
