@@ -1,7 +1,7 @@
 package models
 
 import com.typesafe.config.ConfigFactory
-import play.api.{Logger, Logging}
+import play.api.Logging
 import org.mongodb.scala.bson._
 import org.joda.time._
 
