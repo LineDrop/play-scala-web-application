@@ -14,7 +14,7 @@ class InitController  @Inject()(cc: ControllerComponents) extends AbstractContro
 
   def init(key: String) = Action { implicit request: Request[AnyContent] =>
 
-    log.info("Initializing super administrator")
+    log.info("Initializing application")
 
     // Load key from config
     val sa_key = ConfigFactory.load.getString("sa.key")

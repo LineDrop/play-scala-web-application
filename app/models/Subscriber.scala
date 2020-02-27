@@ -12,8 +12,8 @@ case class Subscriber(email: String, ip: String, created: DateTime)
 case class SubscriberForm(email: String)
 
 object SubscriberOperations extends Logging {
-  val collection = "subscribers"
-  val log = Log.get
+  private val collection = "subscribers"
+  private val log = Log.get
 
   def create(subscriber: Subscriber): Unit = {
     log.debug(s"Creating a new subscriber $subscriber")
@@ -33,7 +33,7 @@ object SubscriberOperations extends Logging {
 
     val sa_email = ConfigFactory.load.getString("sa.email")
     val html_message = "<html><body><p>Greetings! You have a new subscriber.</p></body></html>"
-    utilities.SendGrid.send(sa_email, html_message, "new subscriber")
+    utilities.SendGrid.send(sa_email, html_message, "New subscriber")
 
   }
 
