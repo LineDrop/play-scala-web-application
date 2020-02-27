@@ -31,11 +31,13 @@ object SendGrid {
     val content = new Content("text/html", html_message)
     val mail = new Mail(from, subject, to, content)
 
-    val sg = new SendGrid(key)
+
     val request = new Request
     request.setMethod(Method.POST)
     request.setEndpoint("mail/send")
     request.setBody(mail.build)
+
+    val sg = new SendGrid(key)
     val response = sg.api(request)
 
     log.trace(s"SendGrid response ${response.getStatusCode}")
