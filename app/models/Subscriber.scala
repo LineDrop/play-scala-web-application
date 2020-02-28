@@ -4,7 +4,6 @@ import com.typesafe.config.ConfigFactory
 import play.api.Logging
 import org.mongodb.scala.bson._
 import org.joda.time._
-
 import scala.collection.mutable
 import utilities._
 
