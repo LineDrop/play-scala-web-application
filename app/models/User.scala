@@ -4,7 +4,6 @@ import play.api.Logging
 import org.mongodb.scala.bson._
 import org.joda.time._
 import scala.collection.mutable
-
 import utilities._
 
 case class User(email:String, name: String, role: Role.Value, hash: String, created: DateTime)
@@ -14,8 +13,8 @@ case class UserHashForm(token: String, password: String)
 case class UserAuthenticateForm(email: String, password: String)
 
 object UserOperations extends Logging {
-  val collection = "users"
-  val log = Log.get
+  private val collection = "users"
+  private val log = Log.get
 
   def create(user: User) = {
 

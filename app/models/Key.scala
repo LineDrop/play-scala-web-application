@@ -10,11 +10,11 @@ case class Key(email:String, token: String, created: DateTime)
 
 object KeyOperations extends Logging {
 
-  val collection = "keys"
-  val log = Log.get
+  private val collection = "keys"
+  private val log = Log.get
 
   // Life span of a key, if the key can expire
-  val duration = ConfigFactory.load.getInt("key.duration")
+  private val duration = ConfigFactory.load.getInt("key.duration")
 
   def create (user: User, expires: Boolean) : Key = {
 
