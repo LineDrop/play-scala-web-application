@@ -36,10 +36,13 @@ class InitController  @Inject()(cc: ControllerComponents) extends AbstractContro
         )
       )
 
+      // Return response
+      Ok( JsonResponse.get(success,"Thank you! Application has been initialized.") )
+
     }
 
     // Return response
-    Ok( JsonResponse.get(success,"Thank you! Application has been initialized.") )
+    Ok( JsonResponse.get(failure,"Cannot initialize application.") )
   }
 
 }
