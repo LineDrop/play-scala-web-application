@@ -2,10 +2,10 @@ package controllers
 
 import javax.inject._
 import play.api.mvc._
-import play.api.Logging
-import play.api.libs.json.Json
 import play.filters.csrf.CSRF
 
+import play.api.Logging
+import play.api.libs.json.Json
 import utilities._
 import models._
 import models.JsonStatus._
