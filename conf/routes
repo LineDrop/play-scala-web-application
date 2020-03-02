@@ -20,7 +20,7 @@ GET     /sitemap                    controllers.SitemapController.sitemap
 GET     /version                    controllers.VersionController.version
 
 GET     /                           controllers.HomeController.index
-#+nocsrf
+
 POST    /subscribe/json             controllers.HomeController.subscribe_json
 
 GET     /signin                     controllers.AuthenticationController.signin
