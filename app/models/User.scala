@@ -134,12 +134,12 @@ object UserOperations extends Logging {
 
   def authenticate_from_cookie(cookie_session: Option[String]): Option[User] = {
 
-    log.debug(s"Authenticating user from a current session")
+    log.debug("Authenticating user from a current session")
 
     cookie_session match {
         // Session token is read from the cookie
       case Some(session_token) => {
-        log.trace(s"User signed in")
+        log.trace("User signed in")
         log.trace(s"User session: $session_token")
 
         // Validate session by token
@@ -152,7 +152,7 @@ object UserOperations extends Logging {
           }
           case None => {
             // No session found with this token
-            log.trace(s"Invalid session")
+            log.trace("Invalid session")
             None
           }
         }
@@ -160,7 +160,7 @@ object UserOperations extends Logging {
       }
       case None => {
         // No session token found in the cookie
-        log.trace(s"User is not sign")
+        log.trace("User is not signed in")
         None
       }
     }

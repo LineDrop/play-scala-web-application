@@ -3,15 +3,14 @@ package models
 import play.api.Logging
 import org.mongodb.scala.bson._
 import org.joda.time._
-
 import utilities._
 
 case class Session(email:String, token: String, created: DateTime)
 
 object SessionOperations extends Logging {
 
-  val collection = "sessions"
-  val log = Log.get
+  private val collection = "sessions"
+  private val log = Log.get
 
   def create (user: User) : Session = {
     log.debug(s"Creating a session for ${user.email}")

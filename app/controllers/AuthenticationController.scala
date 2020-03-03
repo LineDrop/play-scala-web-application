@@ -5,7 +5,6 @@ import play.api.mvc._
 import play.api.Logging
 import play.api.libs.json.Json
 import play.filters.csrf.CSRF
-
 import models._
 import models.JsonStatus._
 
@@ -56,10 +55,10 @@ class AuthenticationController  @Inject()(cc: ControllerComponents) extends Abst
   def reset(token: String) = Action { implicit request =>
     // Validate reset key from the request
     KeyOperations.validate(token) match {
-      case Some(valid_token) => {
+      case Some(key) => {
         // Key is valid, render Reset view.
         // CSRF token is passed to enable secure AJAX post from the html.
-        Ok(views.html.reset(valid_token.token, CSRF.getToken.get.value))
+        Ok(views.html.reset(key.token, CSRF.getToken.get.value))
 
       }
       case None => {
@@ -67,8 +66,6 @@ class AuthenticationController  @Inject()(cc: ControllerComponents) extends Abst
         Ok(views.html.expired())
       }
     }
-
-
   }
 
   def hash_json = Action { request =>
