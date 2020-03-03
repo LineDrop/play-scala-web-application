@@ -120,7 +120,7 @@ object UserOperations extends Logging {
     read(email) match {
       case Some(user) => {
         // Compare password with the hashed value
-        if (Hash.validate(password, user.hash)) Some(user) else None
+        if (user.hash.length > 0 && Hash.validate(password, user.hash)) Some(user) else None
       }
       case None => {
         // Cannot find user with this email
