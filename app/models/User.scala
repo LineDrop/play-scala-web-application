@@ -128,8 +128,6 @@ object UserOperations extends Logging {
         None
       }
     }
-
-
   }
 
   def authenticate_from_cookie(cookie_session: Option[String]): Option[User] = {

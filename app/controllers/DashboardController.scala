@@ -5,19 +5,20 @@ import play.api.mvc._
 import play.api.Logging
 import play.api.libs.json.Json
 import play.filters.csrf.CSRF
-
 import models._
 
 class DashboardController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
 
   // A device to translate JSON object to a class;
   // keys in JSON must match class parameters.
-  implicit val user_form_reads = Json.reads[UserForm]
+  //implicit val user_form_reads = Json.reads[UserForm]
 
   def subscribers = Action { implicit request: Request[AnyContent] =>
 
+    // Get session value from the request
+    val session_token = request.session.get("session")
     // Read the cookie and authenticate user
-    UserOperations.authenticate_from_cookie(request.session.get("session")) match {
+    UserOperations.authenticate_from_cookie(session_token) match {
       case Some(user) => {
         // User is authenticated, read data to be displayed
         val subscribers = SubscriberOperations.read
