@@ -146,7 +146,7 @@ object UserOperations extends Logging {
             // Session is valid
             log.trace(s"User found by session $session")
             // Get user by email
-            UserOperations.read(session.email)
+            read(session.email)
           }
           case None => {
             // No session found with this token
