@@ -3,15 +3,10 @@ package controllers
 import javax.inject._
 import play.api.mvc._
 import play.api.Logging
-import play.api.libs.json.Json
 import play.filters.csrf.CSRF
 import models._
 
 class DashboardController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Logging {
-
-  // A device to translate JSON object to a class;
-  // keys in JSON must match class parameters.
-  //implicit val user_form_reads = Json.reads[UserForm]
 
   def subscribers = Action { implicit request: Request[AnyContent] =>
 
