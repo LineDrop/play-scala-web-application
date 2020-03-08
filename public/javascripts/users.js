@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#button_add").click(function() { validate_add_user(); })
-    $("#button_edit").click(function() { validate_edit_user(); })
+    $("#button_save").click(function() { validate_edit_user(); })
     $("#button_delete").click(function() { delete_user(); })
 
     $("#add_user_modal").on('hidden.bs.modal',function(){ window.location.replace("/users"); })
