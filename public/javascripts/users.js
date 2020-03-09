@@ -88,7 +88,7 @@ function edit_user() {
                     $("#edit_name").addClass("d-none");
                     $("#edit_email").addClass("d-none");
                     $("#edit_role").addClass("d-none");
-                    $("#button_edit").addClass("d-none");
+                    $("#button_save").addClass("d-none");
                     $("#button_delete").addClass("d-none");
                     $("#edit_user_prompt").html('<div class="alert alert-success"><p class="mb-0">' + obj.message + '</p></div>');
                 }
@@ -116,7 +116,7 @@ function delete_user() {
                     $("#edit_name").addClass("d-none");
                     $("#edit_email").addClass("d-none");
                     $("#edit_role").addClass("d-none");
-                    $("#button_edit").addClass("d-none");
+                    $("#button_save").addClass("d-none");
                     $("#button_delete").addClass("d-none");
                     $("#edit_user_prompt").html('<div class="alert alert-success"><p class="mb-0">' + obj.message + '</p></div>');
                 }

@@ -67,7 +67,7 @@ object UserOperations extends Logging {
          |</body></html>""".stripMargin
 
     // Send email
-    SendGrid.send(user.email,message,"LineDrop Code password assistance")
+    SendGrid.send(user.email,message,"Password assistance")
 
   }
 

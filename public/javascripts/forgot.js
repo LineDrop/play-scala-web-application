@@ -17,18 +17,10 @@ function forgot() {
         headers: {"CSRF-Token" : $("#csrf").val()},
         data: JSON.stringify({"email": $("#email").val()}),
         contentType: "application/json; charset=utf-8",
-        success: function(obj) {
-            if (obj.status == 'success') {
-                $("#reset").addClass("d-none");
-                $("#proceed").removeClass("d-none");
-            }
-            else {
-                console.log(obj.message)
-            }
-        },
         dataType: "json"
     });
 
-
+    $("#reset").addClass("d-none");
+    $("#proceed").removeClass("d-none");
 
 }

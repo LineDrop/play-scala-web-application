@@ -108,18 +108,13 @@ class AuthenticationController  @Inject()(cc: ControllerComponents) extends Abst
       case Some(user) => {
         // User located by email, send a password reset link.
         UserOperations.send_reset_link(user)
-        // Return JSON response
-        Ok( JsonResponse.get(success,"Reset link sent") )
-
       }
       case None => {
-        // User not found by email
-        // Return JSON response
-        Ok( JsonResponse.get(failure,"Error sending reset link") )
-
+        // User not found, do nothing
       }
     }
 
+    // Return JSON response
+    Ok( JsonResponse.get(success,"") )
   }
-
 }
