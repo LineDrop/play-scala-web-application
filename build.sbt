@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 maintainer := "code@linedrop.io"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.13.1"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
