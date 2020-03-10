@@ -73,7 +73,8 @@ object SubscriberOperations extends Logging {
     val aggregate_map: mutable.Map[DateTime, Int] = mutable.Map.empty
 
     // Make sure that the result is not empty, otherwise the reduce operation will fail
-    if (subscribers.size > 0) {
+    if (subscribers.size > 0)
+    {
       // Reduce the map by created date in ascending order,
       // maintain UTC time zone,
       // and get the day of the first subscription event
