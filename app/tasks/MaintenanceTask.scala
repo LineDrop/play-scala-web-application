@@ -5,7 +5,6 @@
 package tasks
 
 import javax.inject.Inject
-import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
