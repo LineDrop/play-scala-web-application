@@ -24,8 +24,8 @@ class ErrorHandler extends HttpErrorHandler with Logging {
     Future.successful( {
       log.error(s"${exception.toString}")
       // Send email alert
-      val html_message = s"<html><body><p>Greetings! Error occurred in home application. Details below.</p><p> ${exception.getMessage}</p></body></html>"
-      utilities.SendGrid.send(sa_email, html_message, "Home app error")
+      val html_message = s"<html><body><p>Greetings! Error occurred. Details below.</p><p> ${exception.getMessage}</p></body></html>"
+      utilities.SendGrid.send(sa_email, html_message, "Application error")
       InternalServerError(views.html.error())
     }
     )

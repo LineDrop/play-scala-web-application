@@ -9,7 +9,7 @@ class SitemapController  @Inject()(cc: ControllerComponents) extends AbstractCon
     Ok(s"""<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://linedrop.io</loc>
+        <loc>URL goes here</loc>
       </url>
     </urlset>
       """)
