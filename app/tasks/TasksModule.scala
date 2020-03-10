@@ -4,7 +4,6 @@
 
 package tasks
 
-import play.api.inject.SimpleModule
-import play.api.inject._
+import play.api.inject.{SimpleModule, _}
 
 class TasksModule extends SimpleModule(bind[MaintenanceTask].toSelf.eagerly())
