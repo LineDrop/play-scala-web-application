@@ -7,8 +7,6 @@ subscriber app, it is designed to be a starting point for your own project by pr
 web application such as database integration, application configuration, logging, email functionality, user management, 
 password hashing, and more.
 
-You can use the project to quickly learn the basics and expand the existing codebase to add your own functionality.
-
 ### Topic covered
 
 - Creating a project with SBT and importing it into IDE.
