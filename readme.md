@@ -4,37 +4,27 @@
 
 Concise Play Framework/Scala project to demonstrate the fundamentals of building a web application.  A complete 
 subscriber app, it is designed to be a starting point for your own project by providing essential components of a
-web application such as database operations, application configuration, logging, email integration, session management, 
-and data encryption, search, and more. 
+web application such as database integration, application configuration, logging, email functionality, user management, 
+password hashing, and more.
 
 You can use the project to quickly learn the basics and expand the existing codebase to add your own functionality.
 
-### Framework Functionality
+### Topic covered
 
-The project covers the following:
-
-- Application Configuration
-- MongoDB database integration
-- Logging
-- Bootstrap UI
-- Gmail integration
-- Threaded operations
-- User friendly error views
-- Scheduling automated tasks
-- Rendering HTML views
-- Passing model data to HTML views
-- jQuery/Javascript functionality
-- Formless data exchange with AJAX
-- Data encryption
-- Search
-
-### Application Features
-
-- Collecting, reading, and searching subscriber information
-- Creating, editing, and deleting users
-- Password resetting
-- User authentication
-- Role-based access
+- Creating a project with SBT and importing it into IDE.
+- Version control integration.
+- Application structure, secret keys, and session cookies.
+- User interface implementation with jQuery and Bootstrap.
+- Application utilities: logging, database integration, password hashing, random generator, server environment, time and date formatting, email integration.
+- Terminal commands: starting and stopping application and database.
+- Securely initializing a super administrator.
+- Creating and resetting passwords.
+- Creating, editing, and authenticating users.
+- Collecting and displaying subscriber data.
+- Scheduling an automated system task.
+- Error handling with user-friendly pages.
+- Application maintenance: displaying version information and creating a sitemap.
+- Library updates: keeping the language, framework, and library dependencies current.
 
 ## Requirements
 
@@ -90,4 +80,4 @@ Before running the project, please make sure you have the following installed:
 
 ### Contact 
 
-Contact me with comments and questions at paul@linedrop.io.  
+Contact us with comments and questions at code@linedrop.io.  
