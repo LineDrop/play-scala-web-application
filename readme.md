@@ -16,9 +16,11 @@ password hashing, and more.
 - Application utilities: logging, database integration, password hashing, random generator, server environment, time and date formatting, email integration.
 - Terminal commands: starting and stopping application and database.
 - Securely initializing a super administrator.
+- User authentication.
+- Secure access.
 - Creating and resetting passwords.
-- Creating, editing, and authenticating users.
 - Collecting and displaying subscriber data.
+- Creating, editing, and authenticating users.
 - Scheduling an automated system task.
 - Error handling with user-friendly pages.
 - Application maintenance: displaying version information and creating a sitemap.
