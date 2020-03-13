@@ -74,7 +74,7 @@ class AuthenticationController  @Inject()(cc: ControllerComponents) extends Abst
     val json = request.body.asJson.get
     val _form = json.as[UserHashForm]
 
-    // Encrypt user's password and store the resulting hash
+    // Hash the password and store the result
     UserOperations.hash(_form.token, _form.password) match {
 
       case Some(authenticated_user) => {
