@@ -8,7 +8,7 @@ web application such as database integration, application configuration, logging
 password hashing, and more.
 
 Please check out the 
-<a href="https://code.linedrop.io/guides/Ultimate-Guide-to-Building-a-Web-Application-with-Play-and-Scala" target="_blank">
+<a href="https://code.linedrop.io/guides/Ultimate-Guide-to-Building-a-Web-Application-with-Play-and-Scala">
 Ultimate Guide to Building a Web Application with Play and Scala
 </a> for step-by-step instructions.
 
@@ -44,7 +44,7 @@ Before running the project, please make sure you have the following installed:
 - Google Chrome
 
 For detailed installation instructions please check out the 
-<a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment" target="_blank">
+<a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment">
 Practical Guide to Creating Play/Scala Development Environment</a>. 
 
 ### Contact 
