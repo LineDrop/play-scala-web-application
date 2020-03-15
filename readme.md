@@ -2,18 +2,11 @@
 
 ## Overview
 
-Concise Play Framework/Scala project to demonstrate the fundamentals of building a web application.  A complete 
-subscriber app, it is designed to be a starting point for your own project by providing essential components of a
-web application such as database integration, application configuration, logging, email functionality, user management, 
-password hashing, and more.
+Concise Play Framework/Scala project to demonstrate the fundamentals of building a web application. A complete subscriber app, it is designed to be a starting point for your own project by providing essential components of a web application such as database integration, application configuration, logging, email functionality, user management, password hashing, and more.
 
-Please check out the 
-<a href="https://code.linedrop.io/guides/Ultimate-Guide-to-Building-a-Web-Application-with-Play-and-Scala">
-Ultimate Guide to Building a Web Application with Play and Scala
-</a> for step-by-step instructions.
+Please check out the <a href="https://code.linedrop.io/guides/Ultimate-Guide-to-Building-a-Web-Application-with-Play-and-Scala">Ultimate Guide to Building a Web Application with Play and Scala</a> for step-by-step instructions.
 
-### Topic covered
-
+## Topic covered
 - Creating a project with SBT and importing it into IDE.
 - Version control integration.
 - Application structure, secret keys, and session cookies.
@@ -43,9 +36,17 @@ Before running the project, please make sure you have the following installed:
 - IntelliJ IDEA
 - Google Chrome
 
-For detailed installation instructions please check out the 
-<a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment">
-Practical Guide to Creating Play/Scala Development Environment</a>. 
+For detailed installation instructions please check out the <a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment">Practical Guide to Creating Play/Scala Development Environment</a>.
+
+## Cloning the Project
+
+- Open IntelliJ
+- Select Checkout from Version Control
+- Paste URL: https://github.com/LineDrop/code.git
+- Click Clone
+- Click Yes to confirm
+- Click Ok to accept default import settings
+- Wait until the project is imported and the SBT has finished loading dependencies
 
 ### Contact 
 
