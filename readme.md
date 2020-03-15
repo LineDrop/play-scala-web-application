@@ -36,7 +36,7 @@ Before running the project, please make sure you have the following installed:
 - IntelliJ IDEA
 - Google Chrome
 
-For detailed installation instructions please check out the <a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment">Practical Guide to Creating Play/Scala Development Environment</a>.
+For detailed installation instructions, please check out the <a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment">Practical Guide to Creating Play/Scala Development Environment</a>.
 
 ## Cloning the Project
 
