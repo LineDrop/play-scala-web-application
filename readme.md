@@ -7,6 +7,11 @@ subscriber app, it is designed to be a starting point for your own project by pr
 web application such as database integration, application configuration, logging, email functionality, user management, 
 password hashing, and more.
 
+Please check out the 
+<a href="https://code.linedrop.io/guides/Ultimate-Guide-to-Building-a-Web-Application-with-Play-and-Scala" target="_blank">
+Ultimate Guide to Building a Web Application with Play and Scala
+</a> for step-by-step instructions.
+
 ### Topic covered
 
 - Creating a project with SBT and importing it into IDE.
@@ -26,58 +31,22 @@ password hashing, and more.
 - Application maintenance: displaying version information and creating a sitemap.
 - Library updates: keeping the language, framework, and library dependencies current.
 
-## Requirements
+## Development Environment
 
 Before running the project, please make sure you have the following installed:
 
-- SBT _build and package management tool_: https://www.scala-sbt.org
-- MongoDB Community Server: https://www.mongodb.com/download-center/community
-- Compass Community _MongoDB GUI_: https://www.mongodb.com/download-center/compass
-- IntelliJ IDEA Community Edition _integrated development environment_: https://www.jetbrains.com/idea
-    - During the IntelliJ setup, install Scala plugin
+- Java Development Kit (JDK)
+- Simple Build Tool (SBT)
+- Git
+- MongoDB Community Edition
+- MongoDB Compass Community Edition
+- IntelliJ IDEA
+- Google Chrome
 
-### Importing Project
-
-- Open IntelliJ
-- Select Checkout from Version Control
-- Paste URL: https://github.com/LineDrop/code.git
-- Click Clone
-- Click Yes to confirm
-- Click Ok to accept default import settings
-- Wait until the project is imported and the SBT has finished loading dependencies
-
-### Configuring Application
-
-- In IntelliJ, open conf/application.conf
-- Update _Initialize Super Administrator_ section to allow for super administrator initialization
-- Update _Gmail SMPT configuration_ section for the email to work,  please have the App Password ready for your gmail account
-- Update additional configuration keys as necessary
-
-### Running Project
-
-#### Launch MongoDB Server
-- In terminal, _cd_ into to the MongoDB folder
-- Type `bin/mongod` to start database server
-
-#### Launch Application
-- In IntelliJ, click Terminal icon at the bottom of the window
-- Type: `sbt run`
-- Wait until you see _Listening for HTTP on..._
-
-### Initialize Application
-- Open a browser and go to http://localhost:9000
-- Wait for the application to load
-- Browse to http://localhost:9000/init/token, where _token_ is an alphanumeric string in the _sa.key_ configuration item
-
-### Basic Application Test
-- Check your email to set Super Administrator (SA) password
-- Update SA password
-- Sign in as SA
-- Sign out
-- Browse to http://localhost:9000 and enter your email to subscribe
-- Sign in again as SA
-- Notice the new subscriber
+For detailed installation instructions please check out the 
+<a href="https://code.linedrop.io/guides/Practical-Guide-to-Creating-Play-Scala-Development-Environment" target="_blank">
+Practical Guide to Creating Play/Scala Development Environment</a>. 
 
 ### Contact 
 
-Contact us with comments and questions at code@linedrop.io.  
+Contact us with comments and questions at <a href="mailto:code@linedrop.io">code@linedrop.io</a>.  
