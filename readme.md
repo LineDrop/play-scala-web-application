@@ -42,7 +42,7 @@ For detailed installation instructions, please check out the <a href="https://co
 
 - Open IntelliJ
 - Select Checkout from Version Control
-- Paste URL: https://github.com/LineDrop/code.git
+- Paste URL: https://github.com/LineDrop/play-scala-web-application.git
 - Click Clone
 - Click Yes to confirm
 - Click Ok to accept default import settings
