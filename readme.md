@@ -1,4 +1,4 @@
-# Play/Scala Web Application by LineDrop
+# Play/Scala Web Application by Paul Otrokov
 
 ## Overview
 
