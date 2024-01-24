@@ -44,6 +44,3 @@ Before running the project, please make sure you have the following installed:
 - Click Ok to accept default import settings
 - Wait until the project is imported and the SBT has finished loading dependencies
 
-### Contact 
-
-Contact us with comments and questions at <a href="mailto:code@linedrop.io">code@linedrop.io</a>.  
